@@ -12,6 +12,6 @@ package com.is210q12022.is210.sistema.restaurante;
 public class IS210SistemaRestaurante {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Hello Universe!");
     }
 }
