@@ -13,6 +13,7 @@ public class dbManager {
         String login = "";
         String password = "";
         try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             connection = DriverManager.getConnection(url, login, password);
             System.out.println("Connection Successful...");
         } catch (Exception ex) {
@@ -103,6 +104,24 @@ public class dbManager {
             System.out.println(ex);
         }
         return dbResults;
+    }
+    
+    public Boolean authenticate(String username, String password) {
+        try {
+            Query("SELECT username, password FROM users WHERE username='" + username + "'");
+            results.next();
+            System.out.println(results.getString("password"));
+            if (!password.equals(results.getString("password"))){
+                throw new SecurityException();
+            } else {
+                System.out.println("Authentication Succesful....");
+                return true;
+            }
+        } catch(Exception ex){
+            System.out.println("Failed to authenticate user!");
+            System.out.println(ex);
+        }
+        return false;
     }
 
 }
