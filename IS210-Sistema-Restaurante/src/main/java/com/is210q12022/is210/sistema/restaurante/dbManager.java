@@ -17,6 +17,7 @@ public class dbManager {
             connection = DriverManager.getConnection(url, login, password);
             System.out.println("Connection Successful...");
         } catch (Exception ex) {
+            System.out.println("Connection Failed!");
             System.out.println(ex);
         }
     }
@@ -24,13 +25,14 @@ public class dbManager {
     private void Disconnect() {
         try {
             connection.close();
-            System.out.println("Connection Terminated Successfully...");
+            System.out.println("Disconnection Successful...");
         } catch (Exception ex) {
+            System.out.println("Disconnection Failed!");
             System.out.println(ex);
         }
     }
 
-    public void Query(String query){
+    private void Query(String query){
         try{
             this.Connect();
             Statement request = connection.createStatement();
@@ -45,7 +47,7 @@ public class dbManager {
     public ArrayList<userObjectModel> fetchUsersData(){
         ArrayList<userObjectModel> dbResults = new ArrayList<>();
         try {
-            Query("SELECT * FROM users");
+            this.Query("SELECT * FROM users");
             while (results.next()) {
                 userObjectModel user = new userObjectModel();
                 user.setUserId(results.getInt("userId"));
@@ -54,19 +56,19 @@ public class dbManager {
                 user.setUserType(results.getInt("userType"));
                 dbResults.add(user);
             }
-            this.Disconnect();
             System.out.println("Data fetched successfully...");
         } catch(Exception ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
+        this.Disconnect();
         return dbResults;
     }
 
     public ArrayList<productObjectModel> fetchProductsData(){
         ArrayList<productObjectModel> dbResults = new ArrayList<>();
         try {
-            Query("SELECT * FROM products");
+            this.Query("SELECT * FROM products");
             while (results.next()) {
                 productObjectModel product = new productObjectModel();
                 product.setProductId(results.getInt("productId"));
@@ -75,19 +77,19 @@ public class dbManager {
                 product.setInventory(results.getInt("inventory"));
                 dbResults.add(product);
             }
-            this.Disconnect();
             System.out.println("Data fetched successfully...");
         } catch(Exception ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
+        this.Disconnect();
         return dbResults;
     }
 
     public ArrayList<invoiceObjectModel> fetchInvoicesData(){
         ArrayList<invoiceObjectModel> dbResults = new ArrayList<>();
         try {
-            Query("SELECT * FROM invoices");
+            this.Query("SELECT * FROM invoices");
             while (results.next()) {
                 invoiceObjectModel invoice = new invoiceObjectModel();
                 invoice.setInvoiceId(results.getInt("invoiceId"));
@@ -97,31 +99,32 @@ public class dbManager {
                 invoice.setTotal(results.getFloat("total"));
                 dbResults.add(invoice);
             }
-            this.Disconnect();
             System.out.println("Data fetched successfully...");
         } catch(Exception ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
+        this.Disconnect();
         return dbResults;
     }
     
     public Boolean authenticate(String username, String password) {
+        Boolean authState = false;
         try {
-            Query("SELECT username, password FROM users WHERE username='" + username + "'");
+            this.Query("SELECT username, password FROM users WHERE username='" + username + "'");
             results.next();
-            System.out.println(results.getString("password"));
             if (!password.equals(results.getString("password"))){
                 throw new SecurityException();
             } else {
                 System.out.println("Authentication Succesful....");
-                return true;
+                authState = true;
             }
-        } catch(Exception ex){
+        } catch(SecurityException | SQLException ex){
             System.out.println("Failed to authenticate user!");
             System.out.println(ex);
         }
-        return false;
+        this.Disconnect();
+        return authState;
     }
 
 }
