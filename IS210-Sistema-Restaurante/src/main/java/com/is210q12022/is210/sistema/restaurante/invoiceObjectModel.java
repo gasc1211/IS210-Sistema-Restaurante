@@ -13,6 +13,10 @@ public class invoiceObjectModel {
         return invoiceId;
     }
 
+    public void setInvoiceId(int invoiceId) {
+        this.invoiceId = invoiceId;
+    }
+
     public Date getDatetime() {
         return datetime;
     }

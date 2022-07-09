@@ -5,10 +5,14 @@ public class userObjectModel {
     private int userId;
     private String username;
     private String password;
-    private String userType;
+    private int userType;
 
     public int getUserId() {
         return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {
@@ -27,11 +31,12 @@ public class userObjectModel {
         this.password = password;
     }
 
-    public String getUserType() {
+    public int getUserType() {
         return userType;
     }
 
-    public void setUserType(String userType) {
+    public void setUserType(int userType) {
         this.userType = userType;
     }
+
 }
