@@ -108,12 +108,12 @@ public class dbManager {
         return dbResults;
     }
     
-    public Boolean authenticate(String username, String password) {
+    public Boolean authenticate(userObjectModel user) {
         Boolean authState = false;
         try {
-            this.Query("SELECT username, password FROM users WHERE username='" + username + "'");
+            this.Query("SELECT username, password FROM users WHERE username='" + user.getUsername() + "'");
             results.next();
-            if (!password.equals(results.getString("password"))){
+            if (!user.getPassword().equals(results.getString("password"))){
                 throw new SecurityException();
             } else {
                 System.out.println("Authentication Succesful....");
