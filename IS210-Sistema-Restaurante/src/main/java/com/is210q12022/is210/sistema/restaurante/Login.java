@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 public class Login extends javax.swing.JFrame {
     
     private dbManager db = new dbManager();
-    public static userObjectModel currentUser;
+    public static userObjectModel currentUser = new userObjectModel();
 
     public Login() {
         initComponents();
