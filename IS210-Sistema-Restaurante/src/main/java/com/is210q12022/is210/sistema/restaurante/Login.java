@@ -35,7 +35,7 @@ public class Login extends javax.swing.JFrame {
         lbl_userIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Restaurnte");
+        setTitle("Restaurante");
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(400, 420));
         setName("LoginScreen"); // NOI18N
