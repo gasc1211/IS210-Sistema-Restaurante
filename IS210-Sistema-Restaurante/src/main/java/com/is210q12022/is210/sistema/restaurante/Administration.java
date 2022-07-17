@@ -3,18 +3,64 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.is210q12022.is210.sistema.restaurante;
-
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author gasc1211
  */
 public class Administration extends javax.swing.JFrame {
+    
+    private dbManager db = new dbManager();
+    private String userTypes[] = {"Administrador", "Normal"};
+    private userObjectModel user = new userObjectModel();
+
 
     /**
-     * Creates new form Administration
+     * Creates new form MainUI
      */
     public Administration() {
         initComponents();
+        updateTable();
+    }
+    
+    public void updateTable(){
+        DefaultTableModel table =  new DefaultTableModel();
+        ArrayList<userObjectModel> data;
+        String[] rowData = new String[4];
+        table.addColumn("ID");
+        table.addColumn("Usuario");
+        table.addColumn("Contraseña");
+        table.addColumn("Tipo de Usuario");
+        data = db.fetchUsersData();
+        for(int i = 0; i < data.size(); i++){
+            rowData[0] = String.valueOf(data.get(i).getUserId());
+            rowData[1] = data.get(i).getUsername();
+            rowData[2] = data.get(i).getPassword();
+            rowData[3] = userTypes[data.get(i).getUserType()];
+            table.addRow(rowData);
+        }
+        tbl_data.setModel(table);
+    }
+    
+    public void updateUserModel(){
+        user.setUsername(txt_username.getText());
+        user.setPassword(txt_password.getText());
+        user.setUserType(chk_isAdmin.isSelected() ? 0 : 1);
+    }
+    
+    public void updateForm(){
+        int row = tbl_data.getSelectedRow();
+        user.setUserId(Integer.parseInt(tbl_data.getValueAt(row,0).toString()));
+        txt_username.setText(tbl_data.getValueAt(row,1).toString());
+        txt_password.setText(tbl_data.getValueAt(row,2).toString());
+        chk_isAdmin.setSelected(tbl_data.getValueAt(row,3).toString().equals("Administrador"));
+    }
+    
+    public void clearForm() {
+        txt_username.setText("Usuario");
+        txt_password.setText("Contraseña");
+        chk_isAdmin.setSelected(false);
     }
 
     /**
@@ -25,24 +71,202 @@ public class Administration extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_data = new javax.swing.JTable();
+        btn_edit = new javax.swing.JButton();
+        btn_delete = new javax.swing.JButton();
+        btn_new = new javax.swing.JButton();
+        btn_logout = new javax.swing.JButton();
+        txt_username = new javax.swing.JTextField();
+        txt_password = new javax.swing.JTextField();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(100, 0), new java.awt.Dimension(100, 0), new java.awt.Dimension(100, 32767));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(100, 0), new java.awt.Dimension(100, 0), new java.awt.Dimension(100, 32767));
+        chk_isAdmin = new javax.swing.JCheckBox();
+        btn_save = new javax.swing.JButton();
+
+        jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Restaurante");
+        setTitle("Administración de Usuarios");
+        setResizable(false);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        tbl_data.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Contraseña"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl_data.setName(""); // NOI18N
+        jScrollPane1.setViewportView(tbl_data);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(jScrollPane1, gridBagConstraints);
+
+        btn_edit.setText("Editar");
+        btn_edit.setMargin(new java.awt.Insets(5, 15, 5, 15));
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(btn_edit, gridBagConstraints);
+
+        btn_delete.setText("Eliminar");
+        btn_delete.setMargin(new java.awt.Insets(5, 15, 5, 15));
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(btn_delete, gridBagConstraints);
+
+        btn_new.setText("Insertar");
+        btn_new.setMargin(new java.awt.Insets(5, 15, 5, 15));
+        btn_new.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_newActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(btn_new, gridBagConstraints);
+
+        btn_logout.setText("Cerrar Sesión");
+        btn_logout.setMargin(new java.awt.Insets(5, 15, 5, 15));
+        btn_logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_logoutActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        getContentPane().add(btn_logout, gridBagConstraints);
+
+        txt_username.setText("Usuario");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(txt_username, gridBagConstraints);
+
+        txt_password.setText("Contraseña");
+        txt_password.setToolTipText("");
+        txt_password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txt_password.setFocusCycleRoot(true);
+        txt_password.setPreferredSize(new java.awt.Dimension(64, 23));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(txt_password, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        getContentPane().add(filler1, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        getContentPane().add(filler2, gridBagConstraints);
+
+        chk_isAdmin.setText("Administrador");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(chk_isAdmin, gridBagConstraints);
+
+        btn_save.setText("Guardar");
+        btn_save.setEnabled(false);
+        btn_save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_saveActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(btn_save, gridBagConstraints);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        // TODO add your handling code here:
+        int row = tbl_data.getSelectedRow();
+        String userId = tbl_data.getValueAt(row, 0).toString();
+        db.deleteUser(userId);
+        this.updateTable();
+    }//GEN-LAST:event_btn_deleteActionPerformed
+
+    private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
+        // TODO add your handling code here:
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_logoutActionPerformed
+
+    private void btn_newActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newActionPerformed
+        // TODO add your handling code here:
+        this.updateUserModel();
+        db.insertUser(user);
+        this.updateTable();
+    }//GEN-LAST:event_btn_newActionPerformed
+
+    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
+        // TODO add your handling code here:
+        this.updateForm();
+        btn_save.setEnabled(true);
+    }//GEN-LAST:event_btn_editActionPerformed
+
+    private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
+        // TODO add your handling code here:
+        this.updateUserModel();
+        db.updateUser(user);
+        this.updateTable();
+        this.clearForm();
+        btn_save.setEnabled(false);
+    }//GEN-LAST:event_btn_saveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,6 +294,8 @@ public class Administration extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Administration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -80,5 +306,18 @@ public class Administration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_edit;
+    private javax.swing.JButton btn_logout;
+    private javax.swing.JButton btn_new;
+    private javax.swing.JButton btn_save;
+    private javax.swing.JCheckBox chk_isAdmin;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbl_data;
+    private javax.swing.JTextField txt_password;
+    private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 }
