@@ -32,10 +32,10 @@ public class dbManager {
         }
     }
 
-    private void Query(String query){
+    private void executeSQL(String query){
+        this.Connect();
         try{
-            this.Connect();
-            Statement request = connection.createStatement();
+            request = connection.createStatement();
             results = request.executeQuery(query);
             System.out.println("Query executed successfully...");
         } catch(Exception ex){
@@ -47,7 +47,7 @@ public class dbManager {
     public ArrayList<userObjectModel> fetchUsersData(){
         ArrayList<userObjectModel> dbResults = new ArrayList<>();
         try {
-            this.Query("SELECT * FROM users");
+            this.executeSQL("SELECT * FROM users");
             while (results.next()) {
                 userObjectModel user = new userObjectModel();
                 user.setUserId(results.getInt("userId"));
@@ -68,7 +68,7 @@ public class dbManager {
     public ArrayList<productObjectModel> fetchProductsData(){
         ArrayList<productObjectModel> dbResults = new ArrayList<>();
         try {
-            this.Query("SELECT * FROM products");
+            this.executeSQL("SELECT * FROM products");
             while (results.next()) {
                 productObjectModel product = new productObjectModel();
                 product.setProductId(results.getInt("productId"));
@@ -89,7 +89,7 @@ public class dbManager {
     public ArrayList<invoiceObjectModel> fetchInvoicesData(){
         ArrayList<invoiceObjectModel> dbResults = new ArrayList<>();
         try {
-            this.Query("SELECT * FROM invoices");
+            this.executeSQL("SELECT * FROM invoices");
             while (results.next()) {
                 invoiceObjectModel invoice = new invoiceObjectModel();
                 invoice.setInvoiceId(results.getInt("invoiceId"));
@@ -111,7 +111,7 @@ public class dbManager {
     public Boolean authenticate(userObjectModel user) {
         Boolean authState = false;
         try {
-            this.Query("SELECT username, password FROM users WHERE username='" + user.getUsername() + "'");
+            this.executeSQL("SELECT username, password FROM users WHERE username='" + user.getUsername() + "'");
             results.next();
             if (!user.getPassword().equals(results.getString("password"))){
                 throw new SecurityException();
@@ -125,6 +125,54 @@ public class dbManager {
         }
         this.Disconnect();
         return authState;
+    }
+    
+    public void insertUser(userObjectModel user){
+        this.Connect();
+        try {
+            String query = "INSERT INTO users (username, password, userType) VALUES (?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, user.getUsername());
+            statement.setString(2, user.getPassword());
+            statement.setInt(3, user.getUserType());
+            statement.execute();
+            System.out.println("Insertion Succesful...");
+        } catch(SQLException ex) {
+            System.out.println("Failed to insert values!");
+            System.out.println(ex);
+        }
+        this.Disconnect();
+    }
+    
+    public void deleteUser(String userId){
+        this.Connect();
+        try {
+            request = connection.createStatement();
+            request.execute("DELETE FROM users WHERE userId = '" + userId + "'");
+            System.out.println("Deletion Succesful...");
+        } catch(SQLException ex) {
+            System.out.println("Failed to delete entry!");
+            System.out.println(ex);
+        }
+        this.Disconnect();
+    }
+    
+    public void updateUser(userObjectModel user) {
+        this.Connect();
+        try {
+            String query = ("UPDATE users SET username=?, password=?, userType=? WHERE userId=?");
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, user.getUsername());
+            statement.setString(2, user.getPassword());
+            statement.setInt(3, user.getUserType());
+            statement.setInt(4, user.getUserId());
+            statement.execute();
+            System.out.println("Update Succesful...");
+        } catch(SQLException ex) {
+            System.out.println("Failed to update entry!");
+            System.out.println(ex);
+        }
+        this.Disconnect();
     }
 
 }
