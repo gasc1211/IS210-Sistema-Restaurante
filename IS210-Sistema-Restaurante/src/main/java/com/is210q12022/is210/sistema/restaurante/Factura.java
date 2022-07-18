@@ -105,11 +105,11 @@ public class Factura {
             tablapro.addCell(pro3);
             tablapro.addCell(pro4);
             
-            for (int i = 0; i < mesero.model.getRowCount(); i++){
-                String cantidad = mesero.model.getValueAt(i, 0).toString();
-                String producto = mesero.model.getValueAt(i, 1).toString();
-                String precio = mesero.model.getValueAt(i, 2).toString();
-                String total = mesero.model.getValueAt(i, 3).toString();
+            for (int i = 0; i < EjemploMesero.model.getRowCount(); i++){
+                String cantidad = EjemploMesero.model.getValueAt(i, 0).toString();
+                String producto = EjemploMesero.model.getValueAt(i, 1).toString();
+                String precio = EjemploMesero.model.getValueAt(i, 2).toString();
+                String total = EjemploMesero.model.getValueAt(i, 3).toString();
                 tablapro.addCell(cantidad);
                 tablapro.addCell(producto);
                 tablapro.addCell(precio);

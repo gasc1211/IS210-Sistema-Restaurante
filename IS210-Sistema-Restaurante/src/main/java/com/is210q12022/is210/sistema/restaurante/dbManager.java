@@ -19,7 +19,7 @@ public class dbManager {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             connection = DriverManager.getConnection(url, login, password);
             System.out.println("Connection Successful...");
-        } catch (Exception ex) {
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | SQLException ex) {
             System.out.println("Connection Failed!");
             System.out.println(ex);
         }
@@ -29,7 +29,7 @@ public class dbManager {
         try {
             connection.close();
             System.out.println("Disconnection Successful...");
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             System.out.println("Disconnection Failed!");
             System.out.println(ex);
         }
@@ -41,7 +41,7 @@ public class dbManager {
             request = connection.createStatement();
             results = request.executeQuery(query);
             System.out.println("Query executed successfully...");
-        } catch(Exception ex){
+        } catch(SQLException ex){
             System.out.println("Query failed!");
             System.out.println(ex);
         }
@@ -60,7 +60,7 @@ public class dbManager {
                 dbResults.add(user);
             }
             System.out.println("Data fetched successfully...");
-        } catch(Exception ex){
+        } catch(SQLException ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
@@ -81,7 +81,7 @@ public class dbManager {
                 dbResults.add(product);
             }
             System.out.println("Data fetched successfully...");
-        } catch(Exception ex){
+        } catch(SQLException ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
@@ -103,7 +103,7 @@ public class dbManager {
                 dbResults.add(invoice);
             }
             System.out.println("Data fetched successfully...");
-        } catch(Exception ex){
+        } catch(SQLException ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
@@ -181,7 +181,7 @@ public class dbManager {
     public  ArrayList<invoiceObjectModel> LastInvoicesData(){
         ArrayList<invoiceObjectModel> dbResults = new ArrayList<>();
         try {
-            this.Query("SELECT * FROM invoices WHERE invoiceId=(SELECT max(invoiceId) FROM invoices)");
+            this.executeSQL("SELECT * FROM invoices WHERE invoiceId=(SELECT max(invoiceId) FROM invoices)");
             while (results.next()) {
                 invoiceObjectModel invoice = new invoiceObjectModel();
                 invoice.setInvoiceId(results.getInt("invoiceId"));
