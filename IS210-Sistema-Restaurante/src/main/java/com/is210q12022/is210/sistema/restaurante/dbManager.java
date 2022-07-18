@@ -2,6 +2,8 @@ package com.is210q12022.is210.sistema.restaurante;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class dbManager {
 
@@ -173,6 +175,25 @@ public class dbManager {
             System.out.println(ex);
         }
         this.Disconnect();
+    }
+    
+    public boolean registerInvoices(invoiceObjectModel usr){
+        this.Connect();
+        PreparedStatement ps = null;
+        String sql = "INSERT INTO invoices (date, subTotal, taxes, total) VALUES (NOW(),?,?,?)";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setFloat(1, usr.getSubTotal());
+            ps.setFloat(2, usr.getTaxes());
+            ps.setFloat(3, usr.getTotal());
+            ps.execute();
+            
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(invoiceObjectModel.class.getName()).log(Level.SEVERE, null, ex);
+            this.Disconnect();
+            return false;
+        }
     }
 
 }
