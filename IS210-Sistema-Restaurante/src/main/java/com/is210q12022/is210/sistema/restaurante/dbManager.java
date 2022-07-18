@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 public class dbManager {
 
     private Connection connection;
+    private Statement request;
     private ResultSet results;
 
     private void Connect() {
