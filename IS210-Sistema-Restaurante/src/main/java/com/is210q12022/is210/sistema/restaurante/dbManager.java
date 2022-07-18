@@ -178,6 +178,28 @@ public class dbManager {
         this.Disconnect();
     }
     
+    public  ArrayList<invoiceObjectModel> LastInvoicesData(){
+        ArrayList<invoiceObjectModel> dbResults = new ArrayList<>();
+        try {
+            this.Query("SELECT * FROM invoices WHERE invoiceId=(SELECT max(invoiceId) FROM invoices)");
+            while (results.next()) {
+                invoiceObjectModel invoice = new invoiceObjectModel();
+                invoice.setInvoiceId(results.getInt("invoiceId"));
+                invoice.setDatetime(results.getDate("date"));
+                invoice.setSubTotal(results.getFloat("subTotal"));
+                invoice.setTaxes(results.getFloat("taxes"));
+                invoice.setTotal(results.getFloat("total"));
+                dbResults.add(invoice);
+            }
+            System.out.println("Data fetched successfully...");
+        } catch(SQLException ex){
+            System.out.println("Failed to fetch data!");
+            System.out.println(ex);
+        }
+        this.Disconnect();
+        return dbResults;
+    }
+    
     public boolean registerInvoices(invoiceObjectModel usr){
         this.Connect();
         PreparedStatement ps = null;
@@ -196,5 +218,4 @@ public class dbManager {
             return false;
         }
     }
-
 }
