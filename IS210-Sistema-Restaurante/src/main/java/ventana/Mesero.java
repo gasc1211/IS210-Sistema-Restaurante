@@ -138,7 +138,7 @@ public class Mesero extends javax.swing.JFrame {
                 btnensaladaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnensalada, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 170, -1));
+        getContentPane().add(btnensalada, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 170, -1));
 
         btnpostres.setBackground(new java.awt.Color(255, 204, 102));
         btnpostres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dish_Pasta_Spaghetti_26373 (1).png"))); // NOI18N
