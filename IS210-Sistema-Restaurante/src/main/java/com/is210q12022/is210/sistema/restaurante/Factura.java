@@ -111,7 +111,7 @@ public class Factura {
             }
             subtotal = (totalpagar*100)/115;
             impuestos = (float) (subtotal * 0.15);
-           
+            
             doc.add(tablapro);
             
             Paragraph info = new Paragraph();

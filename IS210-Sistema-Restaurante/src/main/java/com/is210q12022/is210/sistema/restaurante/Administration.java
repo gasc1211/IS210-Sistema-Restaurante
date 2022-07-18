@@ -124,7 +124,7 @@ public class Administration extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.gridheight = 6;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         getContentPane().add(jScrollPane1, gridBagConstraints);
 
@@ -185,12 +185,7 @@ public class Administration extends javax.swing.JFrame {
         getContentPane().add(btn_logout, gridBagConstraints);
 
         txt_username.setText("Usuario");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        getContentPane().add(txt_username, gridBagConstraints);
+        getContentPane().add(txt_username, new java.awt.GridBagConstraints());
 
         txt_password.setText("Contraseña");
         txt_password.setToolTipText("");
