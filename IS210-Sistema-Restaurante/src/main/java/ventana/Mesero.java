@@ -83,12 +83,15 @@ public class Mesero extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        txtcantidad = new javax.swing.JTextField();
+        txtprecio = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnnuevo = new javax.swing.JButton();
         btnenviar1 = new javax.swing.JButton();
         btnenviar2 = new javax.swing.JButton();
         btnenviar3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtcantidad = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -202,12 +205,22 @@ public class Mesero extends javax.swing.JFrame {
         btnentrada5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENTRADA\\CANAPES DE POLLO.jpg")); // NOI18N
         btnentrada5.setText("CANAPES DE POLLO");
         btnentrada5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnentrada5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnentrada5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnentrada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 270, -1));
 
         btnentrada3.setBackground(new java.awt.Color(153, 255, 204));
         btnentrada3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENTRADA\\CEVICHE CREMOSO.jpg")); // NOI18N
         btnentrada3.setText("CEVICHE CREMOSO");
         btnentrada3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnentrada3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnentrada3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnentrada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 270, -1));
 
         btnentrada4.setBackground(new java.awt.Color(153, 255, 204));
@@ -247,6 +260,11 @@ public class Mesero extends javax.swing.JFrame {
         btnensalada2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENSALADAS\\ENSALADA CESAR.jpg")); // NOI18N
         btnensalada2.setText("ENSALADA CESAR");
         btnensalada2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnensalada2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnensalada2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnensalada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 270, -1));
 
         btnensalada3.setBackground(new java.awt.Color(153, 255, 204));
@@ -264,18 +282,33 @@ public class Mesero extends javax.swing.JFrame {
         btnensalada4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENSALADAS\\ENSALADA GRIEGA.jpg")); // NOI18N
         btnensalada4.setText("ENSALADA GRIEGA");
         btnensalada4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnensalada4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnensalada4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnensalada4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 270, -1));
 
         btnensalada5.setBackground(new java.awt.Color(153, 255, 204));
         btnensalada5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENSALADAS\\ENSALADA WALDORF.jpg")); // NOI18N
         btnensalada5.setText("ENSALADA WALDORF");
         btnensalada5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnensalada5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnensalada5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnensalada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 270, -1));
 
         btnensalada1.setBackground(new java.awt.Color(153, 255, 204));
         btnensalada1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\Imagen5.jpg")); // NOI18N
         btnensalada1.setText("ENSALADA CAPRESE");
         btnensalada1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnensalada1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnensalada1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnensalada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 270, 80));
 
         btnplatos1.setBackground(new java.awt.Color(153, 255, 204));
@@ -315,6 +348,11 @@ public class Mesero extends javax.swing.JFrame {
         btnplatos4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\PLATO FUERTE\\filete.png")); // NOI18N
         btnplatos4.setText("         FILETE DE PESACADO");
         btnplatos4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnplatos4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnplatos4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnplatos4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 290, 80));
 
         btnplatos5.setBackground(new java.awt.Color(153, 255, 204));
@@ -326,7 +364,7 @@ public class Mesero extends javax.swing.JFrame {
                 btnplatos5ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnplatos5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
+        getContentPane().add(btnplatos5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 290, -1));
 
         btnpostre1.setBackground(new java.awt.Color(153, 255, 204));
         btnpostre1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\SOUFFLE DE MANGO Y COCO.jpg")); // NOI18N
@@ -354,18 +392,33 @@ public class Mesero extends javax.swing.JFrame {
         btnpostre3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\PASTEL VEGANO DE CHOCOLATE.jpg.png")); // NOI18N
         btnpostre3.setText("       PASTEL VEGANO");
         btnpostre3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnpostre3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpostre3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnpostre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, 290, -1));
 
         btnpostre4.setBackground(new java.awt.Color(153, 255, 204));
         btnpostre4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\PASTEL DE ZANAHORIA.jpg")); // NOI18N
         btnpostre4.setText("PASTEL DE ZANAHORIA");
         btnpostre4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnpostre4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpostre4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnpostre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 290, -1));
 
         btnpostre5.setBackground(new java.awt.Color(153, 255, 204));
         btnpostre5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\helado choco.png")); // NOI18N
         btnpostre5.setText("HELADO DE CHOCOLATE");
         btnpostre5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnpostre5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpostre5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnpostre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, 290, 80));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -384,20 +437,20 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 260, 390, 160));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("CANTIDAD DE PRODUCTO");
+        jLabel1.setText("PRECIO");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, -1, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 170, -1, 20));
 
-        txtcantidad.addActionListener(new java.awt.event.ActionListener() {
+        txtprecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcantidadActionPerformed(evt);
+                txtprecioActionPerformed(evt);
             }
         });
-        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 140, -1, -1));
+        getContentPane().add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 170, 50, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 140, 250, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 140, 370, 20));
 
         btnnuevo.setText("NUEVO PEDIDO");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -431,6 +484,23 @@ public class Mesero extends javax.swing.JFrame {
         });
         getContentPane().add(btnenviar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 220, -1, -1));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("CANTIDAD DE PRODUCTO");
+        jLabel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, -1, 20));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("CANTIDAD");
+        jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 170, -1, 20));
+
+        txtcantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcantidadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 170, 50, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -463,59 +533,87 @@ this.btnensalada1.setVisible(true);
     }//GEN-LAST:event_btnplatoActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Pepsi");
+txtprecio.setText("20");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Sprite");
+txtprecio.setText("20");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Seven Up");
+txtprecio.setText("20");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Coca Cola");
+txtprecio.setText("20");
+txtcantidad.requestFocus();// TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Mirinda");
+txtprecio.setText("20");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnentrada4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrada4ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Empanadas Salteñas");
+txtprecio.setText("35");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnentrada4ActionPerformed
 
     private void btnentrada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrada1ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Causa Limeña");
+txtprecio.setText("50");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnentrada1ActionPerformed
 
     private void btnentrada2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrada2ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Nachos Queso");
+txtprecio.setText("40");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnentrada2ActionPerformed
 
     private void btnensalada3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnensalada3ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Ensalada Col");
+txtprecio.setText("55");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnensalada3ActionPerformed
 
     private void btnplatos5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnplatos5ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Arroz con Camarones");
+txtprecio.setText("170");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnplatos5ActionPerformed
 
     private void btnplatos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnplatos1ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Res al Vino Tinto");
+txtprecio.setText("230");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnplatos1ActionPerformed
 
     private void btnplatos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnplatos3ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Pasta al Vodka");
+txtprecio.setText("220");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnplatos3ActionPerformed
 
     private void btnpostre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpostre1ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Souffle de Mango");
+txtprecio.setText("45");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnpostre1ActionPerformed
 
     private void btnpostre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpostre2ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Pie de Limon");
+txtprecio.setText("50");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnpostre2ActionPerformed
 
     private void btnbebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbebidaActionPerformed
@@ -630,9 +728,9 @@ this.btnpostre1.setVisible(true);
      this.btnplatos5.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_btnensaladaActionPerformed
 
-    private void txtcantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcantidadActionPerformed
+    private void txtprecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprecioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcantidadActionPerformed
+    }//GEN-LAST:event_txtprecioActionPerformed
 
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
         // TODO add your handling code here:
@@ -651,8 +749,74 @@ this.btnpostre1.setVisible(true);
     }//GEN-LAST:event_btnenviar3ActionPerformed
 
     private void btnplatos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnplatos2ActionPerformed
-        // TODO add your handling code here:
+jLabel2.setText("Pollo a la Parmesana");
+txtprecio.setText("180");
+txtcantidad.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_btnplatos2ActionPerformed
+
+    private void txtcantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcantidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcantidadActionPerformed
+
+    private void btnentrada3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrada3ActionPerformed
+jLabel2.setText("Ceviche Cremeso");
+txtprecio.setText("45");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnentrada3ActionPerformed
+
+    private void btnentrada5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrada5ActionPerformed
+jLabel2.setText("Canapes de Pollo");
+txtprecio.setText("48");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnentrada5ActionPerformed
+
+    private void btnensalada2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnensalada2ActionPerformed
+jLabel2.setText("Ensalada Cesar");
+txtprecio.setText("70");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnensalada2ActionPerformed
+
+    private void btnensalada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnensalada1ActionPerformed
+jLabel2.setText("Ensalada Caprese");
+txtprecio.setText("65");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnensalada1ActionPerformed
+
+    private void btnensalada5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnensalada5ActionPerformed
+jLabel2.setText("Ensalada Waldorf");
+txtprecio.setText("60");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnensalada5ActionPerformed
+
+    private void btnensalada4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnensalada4ActionPerformed
+jLabel2.setText("Ensalada Griega");
+txtprecio.setText("58");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnensalada4ActionPerformed
+
+    private void btnplatos4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnplatos4ActionPerformed
+jLabel2.setText("Filete de Pescado");
+txtprecio.setText("250");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnplatos4ActionPerformed
+
+    private void btnpostre4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpostre4ActionPerformed
+jLabel2.setText("Pastel de Zanahoria");
+txtprecio.setText("45");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnpostre4ActionPerformed
+
+    private void btnpostre3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpostre3ActionPerformed
+    jLabel2.setText("Pastel Vegano");
+txtprecio.setText("35");
+txtcantidad.requestFocus();    // TODO add your handling code here:
+    }//GEN-LAST:event_btnpostre3ActionPerformed
+
+    private void btnpostre5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpostre5ActionPerformed
+jLabel2.setText("Helado de Chocolate");
+txtprecio.setText("25");
+txtcantidad.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnpostre5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -726,8 +890,11 @@ this.btnpostre1.setVisible(true);
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtcantidad;
+    private javax.swing.JTextField txtprecio;
     // End of variables declaration//GEN-END:variables
 }
