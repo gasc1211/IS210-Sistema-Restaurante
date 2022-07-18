@@ -97,7 +97,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnbebida.setBackground(new java.awt.Color(255, 204, 102));
-        btnbebida.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Downloads\\3558091-beverage-drink-juice-refreshment-soft_107822.png")); // NOI18N
+        btnbebida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3558091-beverage-drink-juice-refreshment-soft_107822.png"))); // NOI18N
         btnbebida.setText("BEBIDAS");
         btnbebida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnbebida.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +108,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnbebida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, -1));
 
         btnentrada.setBackground(new java.awt.Color(255, 204, 102));
-        btnentrada.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Downloads\\nachos_mexican_food_food_appetizer_snack_icon_208010.png")); // NOI18N
+        btnentrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nachos_mexican_food_food_appetizer_snack_icon_208010.png"))); // NOI18N
         btnentrada.setText("ENTRADAS");
         btnentrada.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +119,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 170, -1));
 
         btnplato.setBackground(new java.awt.Color(255, 204, 102));
-        btnplato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Downloads\\32395greensalad_98843 (1).png")); // NOI18N
+        btnplato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/32395greensalad_98843 (1).png"))); // NOI18N
         btnplato.setText("ENSALADA");
         btnplato.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplato.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +130,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnplato, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         btnensalada.setBackground(new java.awt.Color(255, 204, 102));
-        btnensalada.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Downloads\\Cake_ChocolateCake_26374 (1).png")); // NOI18N
+        btnensalada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cake_ChocolateCake_26374 (1).png"))); // NOI18N
         btnensalada.setText("POSTRES");
         btnensalada.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +141,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnensalada, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 170, -1));
 
         btnpostres.setBackground(new java.awt.Color(255, 204, 102));
-        btnpostres.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Downloads\\Dish_Pasta_Spaghetti_26373 (1).png")); // NOI18N
+        btnpostres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dish_Pasta_Spaghetti_26373 (1).png"))); // NOI18N
         btnpostres.setText("PLATOS");
         btnpostres.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostres.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +152,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnpostres, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 170, -1));
 
         jButton1.setBackground(new java.awt.Color(153, 255, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\mirinda.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mirinda.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +162,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 100, -1));
 
         jButton2.setBackground(new java.awt.Color(153, 255, 204));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\sprite.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sprite.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +172,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 100, -1));
 
         jButton3.setBackground(new java.awt.Color(153, 255, 204));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\seven.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/seven.png"))); // NOI18N
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,7 +182,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 100, -1));
 
         jButton4.setBackground(new java.awt.Color(153, 255, 204));
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\pepsi.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pepsi.png"))); // NOI18N
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +192,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 100, -1));
 
         jButton5.setBackground(new java.awt.Color(153, 255, 204));
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\cola.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cola.png"))); // NOI18N
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,7 +202,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 100, 80));
 
         btnentrada5.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENTRADA\\CANAPES DE POLLO.jpg")); // NOI18N
+        btnentrada5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CANAPES DE POLLO.jpg"))); // NOI18N
         btnentrada5.setText("CANAPES DE POLLO");
         btnentrada5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada5.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +213,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnentrada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 270, -1));
 
         btnentrada3.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENTRADA\\CEVICHE CREMOSO.jpg")); // NOI18N
+        btnentrada3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CEVICHE CREMOSO.jpg"))); // NOI18N
         btnentrada3.setText("CEVICHE CREMOSO");
         btnentrada3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada3.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +224,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnentrada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 270, -1));
 
         btnentrada4.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENTRADA\\EMPANADAS SALTEÑAS.jpg")); // NOI18N
+        btnentrada4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/EMPANADAS SALTEÑAS.jpg"))); // NOI18N
         btnentrada4.setText("EMPANADAS SALTEÑAS");
         btnentrada4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada4.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +235,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnentrada4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 270, -1));
 
         btnentrada1.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENTRADA\\CAUSA LIMEÑA.jpg")); // NOI18N
+        btnentrada1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CAUSA LIMEÑA.jpg"))); // NOI18N
         btnentrada1.setText("CAUSA LIMEÑA");
         btnentrada1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada1.addActionListener(new java.awt.event.ActionListener() {
@@ -246,7 +246,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnentrada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 280, -1));
 
         btnentrada2.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\Imagen1.jpg")); // NOI18N
+        btnentrada2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen1.jpg"))); // NOI18N
         btnentrada2.setText("NACHOS QUESO");
         btnentrada2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada2.addActionListener(new java.awt.event.ActionListener() {
@@ -257,7 +257,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnentrada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 280, 80));
 
         btnensalada2.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENSALADAS\\ENSALADA CESAR.jpg")); // NOI18N
+        btnensalada2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ENSALADA CESAR.jpg"))); // NOI18N
         btnensalada2.setText("ENSALADA CESAR");
         btnensalada2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada2.addActionListener(new java.awt.event.ActionListener() {
@@ -268,7 +268,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnensalada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 270, -1));
 
         btnensalada3.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENSALADAS\\ENSALADA DE COL.jpg")); // NOI18N
+        btnensalada3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ENSALADA DE COL.jpg"))); // NOI18N
         btnensalada3.setText("ENSALADA COL");
         btnensalada3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada3.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +279,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnensalada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 270, 80));
 
         btnensalada4.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENSALADAS\\ENSALADA GRIEGA.jpg")); // NOI18N
+        btnensalada4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ENSALADA GRIEGA.jpg"))); // NOI18N
         btnensalada4.setText("ENSALADA GRIEGA");
         btnensalada4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada4.addActionListener(new java.awt.event.ActionListener() {
@@ -290,7 +290,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnensalada4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 270, -1));
 
         btnensalada5.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\ENSALADAS\\ENSALADA WALDORF.jpg")); // NOI18N
+        btnensalada5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ENSALADA WALDORF.jpg"))); // NOI18N
         btnensalada5.setText("ENSALADA WALDORF");
         btnensalada5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada5.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +301,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnensalada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 270, -1));
 
         btnensalada1.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\Imagen5.jpg")); // NOI18N
+        btnensalada1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen5.jpg"))); // NOI18N
         btnensalada1.setText("ENSALADA CAPRESE");
         btnensalada1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada1.addActionListener(new java.awt.event.ActionListener() {
@@ -312,7 +312,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnensalada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 270, 80));
 
         btnplatos1.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\PLATO FUERTE\\RES AL VINO TINTO.jpg")); // NOI18N
+        btnplatos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/RES AL VINO TINTO.jpg"))); // NOI18N
         btnplatos1.setText("           RES AL VINO TINTO");
         btnplatos1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos1.addActionListener(new java.awt.event.ActionListener() {
@@ -323,7 +323,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnplatos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 290, -1));
 
         btnplatos2.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\PLATO FUERTE\\POLLO A LA PARMESANA.jpeg.jpg")); // NOI18N
+        btnplatos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/POLLO A LA PARMESANA.jpeg.jpg"))); // NOI18N
         btnplatos2.setText("POLLO A LA PARMESANA");
         btnplatos2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos2.addActionListener(new java.awt.event.ActionListener() {
@@ -334,7 +334,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnplatos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 290, -1));
 
         btnplatos3.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\PLATO FUERTE\\PENNE AL VODKA.jpg")); // NOI18N
+        btnplatos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PENNE AL VODKA.jpg"))); // NOI18N
         btnplatos3.setText("         PASTA AL VODKA            ");
         btnplatos3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos3.addActionListener(new java.awt.event.ActionListener() {
@@ -345,7 +345,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnplatos3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 290, -1));
 
         btnplatos4.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\PLATO FUERTE\\filete.png")); // NOI18N
+        btnplatos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filete.png"))); // NOI18N
         btnplatos4.setText("         FILETE DE PESACADO");
         btnplatos4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos4.addActionListener(new java.awt.event.ActionListener() {
@@ -356,7 +356,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnplatos4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 290, 80));
 
         btnplatos5.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\PLATO FUERTE\\ARROZ CON CAMARONES.jpg")); // NOI18N
+        btnplatos5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ARROZ CON CAMARONES.jpg"))); // NOI18N
         btnplatos5.setText("ARROZ CON CAMARONES");
         btnplatos5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos5.addActionListener(new java.awt.event.ActionListener() {
@@ -367,7 +367,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnplatos5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 290, -1));
 
         btnpostre1.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\SOUFFLE DE MANGO Y COCO.jpg")); // NOI18N
+        btnpostre1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SOUFFLE DE MANGO Y COCO.jpg"))); // NOI18N
         btnpostre1.setText("SOUFFLE DE MANGO");
         btnpostre1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre1.addActionListener(new java.awt.event.ActionListener() {
@@ -378,7 +378,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnpostre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 470, 290, -1));
 
         btnpostre2.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\PIE DE LIMÓN CON MERENGUE.png")); // NOI18N
+        btnpostre2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PIE DE LIMÓN CON MERENGUE.png"))); // NOI18N
         btnpostre2.setText("           PIE DE LIMÓN");
         btnpostre2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre2.addActionListener(new java.awt.event.ActionListener() {
@@ -389,7 +389,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnpostre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 290, 80));
 
         btnpostre3.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\PASTEL VEGANO DE CHOCOLATE.jpg.png")); // NOI18N
+        btnpostre3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PASTEL VEGANO DE CHOCOLATE.jpg.png"))); // NOI18N
         btnpostre3.setText("       PASTEL VEGANO");
         btnpostre3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre3.addActionListener(new java.awt.event.ActionListener() {
@@ -400,7 +400,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnpostre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, 290, -1));
 
         btnpostre4.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\PASTEL DE ZANAHORIA.jpg")); // NOI18N
+        btnpostre4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PASTEL DE ZANAHORIA.jpg"))); // NOI18N
         btnpostre4.setText("PASTEL DE ZANAHORIA");
         btnpostre4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre4.addActionListener(new java.awt.event.ActionListener() {
@@ -411,7 +411,7 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnpostre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 290, -1));
 
         btnpostre5.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cesar Maldonado\\Desktop\\PROYECTO-RESTAURANTE\\POSTRES\\helado choco.png")); // NOI18N
+        btnpostre5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/helado choco.png"))); // NOI18N
         btnpostre5.setText("HELADO DE CHOCOLATE");
         btnpostre5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre5.addActionListener(new java.awt.event.ActionListener() {
