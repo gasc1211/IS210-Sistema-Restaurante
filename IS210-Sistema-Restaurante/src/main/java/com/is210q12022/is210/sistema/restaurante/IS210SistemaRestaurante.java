@@ -13,5 +13,6 @@ public class IS210SistemaRestaurante {
 
     public static void main(String[] args) {
         new Login().setVisible(true);
+        // Main
     }
 }

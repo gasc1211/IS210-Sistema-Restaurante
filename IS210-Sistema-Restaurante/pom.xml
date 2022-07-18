@@ -30,6 +30,10 @@
             <artifactId>jasperreports</artifactId>
             <version>6.20.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE130</version>
+        </dependency>
     </dependencies>
 </project>
