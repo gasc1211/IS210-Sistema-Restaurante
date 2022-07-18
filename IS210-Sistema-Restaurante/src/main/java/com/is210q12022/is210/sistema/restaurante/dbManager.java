@@ -203,7 +203,7 @@ public class dbManager {
     public boolean registerInvoices(invoiceObjectModel usr){
         this.Connect();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO invoices (date, subTotal, taxes, total) VALUES (NOW(),?,?,?)";
+        String sql = "INSERT INTO invoices (date, subTotal, taxes, total) VALUES (GETDATE(),?,?,?)";
         try {
             ps = connection.prepareStatement(sql);
             ps.setFloat(1, usr.getSubTotal());
