@@ -4,11 +4,18 @@
  */
 package ventana;
 //ddd
+
+
+
+
+
+
 /**
  *
  * @author Cesar Maldonado
  */
 public class Mesero extends javax.swing.JFrame {
+   
     /**
      * Creates new form Mesero
      */
@@ -97,7 +104,6 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnbebida.setBackground(new java.awt.Color(255, 204, 102));
-        btnbebida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3558091-beverage-drink-juice-refreshment-soft_107822.png"))); // NOI18N
         btnbebida.setText("BEBIDAS");
         btnbebida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnbebida.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +114,6 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnbebida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, -1));
 
         btnentrada.setBackground(new java.awt.Color(255, 204, 102));
-        btnentrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nachos_mexican_food_food_appetizer_snack_icon_208010.png"))); // NOI18N
         btnentrada.setText("ENTRADAS");
         btnentrada.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +124,6 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 170, -1));
 
         btnplato.setBackground(new java.awt.Color(255, 204, 102));
-        btnplato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/32395greensalad_98843 (1).png"))); // NOI18N
         btnplato.setText("ENSALADA");
         btnplato.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplato.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +134,6 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnplato, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         btnensalada.setBackground(new java.awt.Color(255, 204, 102));
-        btnensalada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cake_ChocolateCake_26374 (1).png"))); // NOI18N
         btnensalada.setText("POSTRES");
         btnensalada.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +144,6 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnensalada, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 170, -1));
 
         btnpostres.setBackground(new java.awt.Color(255, 204, 102));
-        btnpostres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dish_Pasta_Spaghetti_26373 (1).png"))); // NOI18N
         btnpostres.setText("PLATOS");
         btnpostres.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostres.addActionListener(new java.awt.event.ActionListener() {
@@ -152,57 +154,57 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().add(btnpostres, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 170, -1));
 
         jButton1.setBackground(new java.awt.Color(153, 255, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mirinda.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\BEBIDAS\\mirinda.png")); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 100, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 234, 100, -1));
 
         jButton2.setBackground(new java.awt.Color(153, 255, 204));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sprite.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\BEBIDAS\\sprite.png")); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 100, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 414, 100, -1));
 
         jButton3.setBackground(new java.awt.Color(153, 255, 204));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/seven.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\BEBIDAS\\seven.png")); // NOI18N
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 100, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 324, 100, -1));
 
         jButton4.setBackground(new java.awt.Color(153, 255, 204));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pepsi.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\BEBIDAS\\pepsi.png")); // NOI18N
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 100, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 144, 100, -1));
 
         jButton5.setBackground(new java.awt.Color(153, 255, 204));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cola.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\BEBIDAS\\cola.png")); // NOI18N
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 100, 80));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 54, 100, -1));
 
         btnentrada5.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CANAPES DE POLLO.jpg"))); // NOI18N
+        btnentrada5.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENTRADA\\CANAPES DE POLLO.jpg")); // NOI18N
         btnentrada5.setText("CANAPES DE POLLO");
         btnentrada5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada5.addActionListener(new java.awt.event.ActionListener() {
@@ -210,10 +212,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnentrada5ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnentrada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 270, -1));
+        getContentPane().add(btnentrada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 414, 270, -1));
 
         btnentrada3.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CEVICHE CREMOSO.jpg"))); // NOI18N
+        btnentrada3.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENTRADA\\CEVICHE CREMOSO.jpg")); // NOI18N
         btnentrada3.setText("CEVICHE CREMOSO");
         btnentrada3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada3.addActionListener(new java.awt.event.ActionListener() {
@@ -221,10 +223,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnentrada3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnentrada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 270, -1));
+        getContentPane().add(btnentrada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 234, 270, -1));
 
         btnentrada4.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/EMPANADAS SALTEÑAS.jpg"))); // NOI18N
+        btnentrada4.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENTRADA\\EMPANADAS SALTEÑAS.jpg")); // NOI18N
         btnentrada4.setText("EMPANADAS SALTEÑAS");
         btnentrada4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada4.addActionListener(new java.awt.event.ActionListener() {
@@ -232,10 +234,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnentrada4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnentrada4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 270, -1));
+        getContentPane().add(btnentrada4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 324, 270, -1));
 
         btnentrada1.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CAUSA LIMEÑA.jpg"))); // NOI18N
+        btnentrada1.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENTRADA\\CAUSA LIMEÑA.jpg")); // NOI18N
         btnentrada1.setText("CAUSA LIMEÑA");
         btnentrada1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada1.addActionListener(new java.awt.event.ActionListener() {
@@ -243,10 +245,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnentrada1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnentrada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 280, -1));
+        getContentPane().add(btnentrada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 54, 280, -1));
 
         btnentrada2.setBackground(new java.awt.Color(153, 255, 204));
-        btnentrada2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen1.jpg"))); // NOI18N
+        btnentrada2.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENTRADA\\Imagen1.jpg")); // NOI18N
         btnentrada2.setText("NACHOS QUESO");
         btnentrada2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnentrada2.addActionListener(new java.awt.event.ActionListener() {
@@ -254,10 +256,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnentrada2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnentrada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 280, 80));
+        getContentPane().add(btnentrada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 144, 280, 80));
 
         btnensalada2.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ENSALADA CESAR.jpg"))); // NOI18N
+        btnensalada2.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENSALADAS\\ENSALADA CESAR.jpg")); // NOI18N
         btnensalada2.setText("ENSALADA CESAR");
         btnensalada2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada2.addActionListener(new java.awt.event.ActionListener() {
@@ -265,10 +267,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnensalada2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnensalada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 270, -1));
+        getContentPane().add(btnensalada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 144, 270, -1));
 
         btnensalada3.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ENSALADA DE COL.jpg"))); // NOI18N
+        btnensalada3.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENSALADAS\\ENSALADA DE COL.jpg")); // NOI18N
         btnensalada3.setText("ENSALADA COL");
         btnensalada3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada3.addActionListener(new java.awt.event.ActionListener() {
@@ -276,10 +278,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnensalada3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnensalada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 270, 80));
+        getContentPane().add(btnensalada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 54, 270, 80));
 
         btnensalada4.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ENSALADA GRIEGA.jpg"))); // NOI18N
+        btnensalada4.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENSALADAS\\ENSALADA GRIEGA.jpg")); // NOI18N
         btnensalada4.setText("ENSALADA GRIEGA");
         btnensalada4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada4.addActionListener(new java.awt.event.ActionListener() {
@@ -287,10 +289,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnensalada4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnensalada4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 270, -1));
+        getContentPane().add(btnensalada4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 414, 270, -1));
 
         btnensalada5.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ENSALADA WALDORF.jpg"))); // NOI18N
+        btnensalada5.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENSALADAS\\ENSALADA WALDORF.jpg")); // NOI18N
         btnensalada5.setText("ENSALADA WALDORF");
         btnensalada5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada5.addActionListener(new java.awt.event.ActionListener() {
@@ -298,10 +300,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnensalada5ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnensalada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 270, -1));
+        getContentPane().add(btnensalada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 324, 270, -1));
 
         btnensalada1.setBackground(new java.awt.Color(153, 255, 204));
-        btnensalada1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen5.jpg"))); // NOI18N
+        btnensalada1.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\ENSALADAS\\Imagen5.jpg")); // NOI18N
         btnensalada1.setText("ENSALADA CAPRESE");
         btnensalada1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnensalada1.addActionListener(new java.awt.event.ActionListener() {
@@ -309,10 +311,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnensalada1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnensalada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 270, 80));
+        getContentPane().add(btnensalada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 234, 270, 80));
 
         btnplatos1.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/RES AL VINO TINTO.jpg"))); // NOI18N
+        btnplatos1.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\PLATO FUERTE\\RES AL VINO TINTO.jpg")); // NOI18N
         btnplatos1.setText("           RES AL VINO TINTO");
         btnplatos1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos1.addActionListener(new java.awt.event.ActionListener() {
@@ -320,10 +322,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnplatos1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnplatos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 290, -1));
+        getContentPane().add(btnplatos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 414, 290, -1));
 
         btnplatos2.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/POLLO A LA PARMESANA.jpeg.jpg"))); // NOI18N
+        btnplatos2.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\PLATO FUERTE\\POLLO A LA PARMESANA.jpeg.jpg")); // NOI18N
         btnplatos2.setText("POLLO A LA PARMESANA");
         btnplatos2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos2.addActionListener(new java.awt.event.ActionListener() {
@@ -331,10 +333,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnplatos2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnplatos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 290, -1));
+        getContentPane().add(btnplatos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 234, 290, -1));
 
         btnplatos3.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PENNE AL VODKA.jpg"))); // NOI18N
+        btnplatos3.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\PLATO FUERTE\\PENNE AL VODKA.jpg")); // NOI18N
         btnplatos3.setText("         PASTA AL VODKA            ");
         btnplatos3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos3.addActionListener(new java.awt.event.ActionListener() {
@@ -342,10 +344,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnplatos3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnplatos3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 290, -1));
+        getContentPane().add(btnplatos3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 144, 290, -1));
 
         btnplatos4.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filete.png"))); // NOI18N
+        btnplatos4.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\PLATO FUERTE\\filete.png")); // NOI18N
         btnplatos4.setText("         FILETE DE PESACADO");
         btnplatos4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos4.addActionListener(new java.awt.event.ActionListener() {
@@ -353,10 +355,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnplatos4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnplatos4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 290, 80));
+        getContentPane().add(btnplatos4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 324, 290, 80));
 
         btnplatos5.setBackground(new java.awt.Color(153, 255, 204));
-        btnplatos5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ARROZ CON CAMARONES.jpg"))); // NOI18N
+        btnplatos5.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\PLATO FUERTE\\ARROZ CON CAMARONES.jpg")); // NOI18N
         btnplatos5.setText("ARROZ CON CAMARONES");
         btnplatos5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnplatos5.addActionListener(new java.awt.event.ActionListener() {
@@ -364,10 +366,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnplatos5ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnplatos5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 290, -1));
+        getContentPane().add(btnplatos5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 54, 290, -1));
 
         btnpostre1.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SOUFFLE DE MANGO Y COCO.jpg"))); // NOI18N
+        btnpostre1.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\POSTRES\\SOUFFLE DE MANGO Y COCO.jpg")); // NOI18N
         btnpostre1.setText("SOUFFLE DE MANGO");
         btnpostre1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre1.addActionListener(new java.awt.event.ActionListener() {
@@ -375,10 +377,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnpostre1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnpostre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 470, 290, -1));
+        getContentPane().add(btnpostre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 414, 290, -1));
 
         btnpostre2.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PIE DE LIMÓN CON MERENGUE.png"))); // NOI18N
+        btnpostre2.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\POSTRES\\PIE DE LIMÓN CON MERENGUE.png")); // NOI18N
         btnpostre2.setText("           PIE DE LIMÓN");
         btnpostre2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre2.addActionListener(new java.awt.event.ActionListener() {
@@ -386,10 +388,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnpostre2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnpostre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 290, 80));
+        getContentPane().add(btnpostre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 324, 290, 80));
 
         btnpostre3.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PASTEL VEGANO DE CHOCOLATE.jpg.png"))); // NOI18N
+        btnpostre3.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\POSTRES\\PASTEL VEGANO DE CHOCOLATE.jpg.png")); // NOI18N
         btnpostre3.setText("       PASTEL VEGANO");
         btnpostre3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre3.addActionListener(new java.awt.event.ActionListener() {
@@ -397,10 +399,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnpostre3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnpostre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, 290, -1));
+        getContentPane().add(btnpostre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 144, 290, -1));
 
         btnpostre4.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PASTEL DE ZANAHORIA.jpg"))); // NOI18N
+        btnpostre4.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\POSTRES\\PASTEL DE ZANAHORIA.jpg")); // NOI18N
         btnpostre4.setText("PASTEL DE ZANAHORIA");
         btnpostre4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre4.addActionListener(new java.awt.event.ActionListener() {
@@ -408,10 +410,10 @@ public class Mesero extends javax.swing.JFrame {
                 btnpostre4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnpostre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 290, -1));
+        getContentPane().add(btnpostre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 54, 290, -1));
 
         btnpostre5.setBackground(new java.awt.Color(153, 255, 204));
-        btnpostre5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/helado choco.png"))); // NOI18N
+        btnpostre5.setIcon(new javax.swing.ImageIcon("C:\\IMAGENES\\POSTRES\\helado choco.png")); // NOI18N
         btnpostre5.setText("HELADO DE CHOCOLATE");
         btnpostre5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpostre5.addActionListener(new java.awt.event.ActionListener() {
@@ -419,7 +421,7 @@ public class Mesero extends javax.swing.JFrame {
                 btnpostre5ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnpostre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, 290, 80));
+        getContentPane().add(btnpostre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 234, 290, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -434,23 +436,24 @@ public class Mesero extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 260, 390, 160));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 204, 390, 160));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PRECIO");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 170, -1, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 114, -1, -1));
 
+        txtprecio.setEnabled(false);
         txtprecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtprecioActionPerformed(evt);
             }
         });
-        getContentPane().add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 170, 50, -1));
+        getContentPane().add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 114, 50, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 140, 370, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 84, 370, 20));
 
         btnnuevo.setText("NUEVO PEDIDO");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -458,7 +461,7 @@ public class Mesero extends javax.swing.JFrame {
                 btnnuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 440, 130, -1));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 384, 130, -1));
 
         btnenviar1.setText("ELIMINAR PEDIDO");
         btnenviar1.addActionListener(new java.awt.event.ActionListener() {
@@ -466,7 +469,7 @@ public class Mesero extends javax.swing.JFrame {
                 btnenviar1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnenviar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 490, 130, -1));
+        getContentPane().add(btnenviar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 434, 130, -1));
 
         btnenviar2.setText("EDITAR PEDIDO");
         btnenviar2.addActionListener(new java.awt.event.ActionListener() {
@@ -474,7 +477,7 @@ public class Mesero extends javax.swing.JFrame {
                 btnenviar2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnenviar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 440, 130, -1));
+        getContentPane().add(btnenviar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 384, 130, -1));
 
         btnenviar3.setText("ENVIAR PEDIDO");
         btnenviar3.addActionListener(new java.awt.event.ActionListener() {
@@ -482,24 +485,24 @@ public class Mesero extends javax.swing.JFrame {
                 btnenviar3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnenviar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 220, -1, -1));
+        getContentPane().add(btnenviar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 164, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CANTIDAD DE PRODUCTO");
         jLabel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, -1, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 34, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("CANTIDAD");
         jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 170, -1, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 114, -1, -1));
 
         txtcantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcantidadActionPerformed(evt);
             }
         });
-        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 170, 50, -1));
+        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 114, 50, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -852,7 +855,8 @@ txtcantidad.requestFocus();        // TODO add your handling code here:
             }
         });
     }
-
+   
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbebida;
     private javax.swing.JButton btnensalada;
