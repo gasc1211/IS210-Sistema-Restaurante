@@ -11,7 +11,8 @@ import javax.swing.table.DefaultTableModel;
 
 public class Cocina extends javax.swing.JFrame {
 
-    DefaultTableModel model;
+    DefaultTableModel model1;
+    DefaultTableModel model2;
     
     public Connection Conectar() {
         Connection con = null;
@@ -26,17 +27,69 @@ public class Cocina extends javax.swing.JFrame {
     
     public Cocina() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        Cargar();
     }
 
+    public void Cargar() {
+        Connection con1 = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
 
+        try {
+                con1 = Conectar();
+                pst = con1.prepareStatement("select * from orders");
+                rs = pst.executeQuery();
+                
+                Object[] orders = new Object[5];
+                model1 = (DefaultTableModel) jTable1.getModel();
+                
+                while (rs.next()) {
+                orders[0] = rs.getInt("orderId");
+                orders[1] = rs.getString("bebida");
+                orders[2] = rs.getInt("cantidadB");
+                orders[3] = rs.getString("comida");
+                orders[4] = rs.getInt("cantidadC");
+                model1.addRow(orders);              
+                }
+                jTable1.setModel(model1);
+                      
+            } catch (SQLException e) {
+                System.err.print(e.toString());
+                JOptionPane.showMessageDialog(this, "Ocurrio un error inesperado.\nFavor comunicarse con el administrador.");
+            
+            }  
+    }
+
+    public void limpiar1() {
+            for (int i = 0; i <= jTable1.getRowCount(); i++) {
+            model1.removeRow(i);
+            i = i - 1;
+        }
+    }
+    
+        public void limpiar2() {
+            for (int i = 0; i <= jTable2.getRowCount(); i++) {
+            model2.removeRow(i);
+            i = i - 1;
+        }
+    }
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -46,20 +99,45 @@ public class Cocina extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nombre", "Contraseña"
+                "Orden ID", "Bebida", "Cantidad Bebida", "Comida", "Cantidad Comida"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 570, 310));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Orden ID", "Bebida", "Cantidad Bebida", "Comida", "Cantidad Comida"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 570, 160));
 
         jButton1.setText("Probar conexión");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -67,15 +145,40 @@ public class Cocina extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, -1, -1));
 
-        jButton2.setText("Consultar Tabla");
+        jButton2.setText("Actualizar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 530, 50, -1));
+
+        jButton3.setText("Elegir Orden");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, -1, -1));
+
+        jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
+
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -84,39 +187,60 @@ public class Cocina extends javax.swing.JFrame {
         Conectar conecta = new Conectar();
         Connection con = conecta.getConexion();
         if (con==null){
-        JOptionPane.showMessageDialog(null, "No hay Conexión");
+            JOptionPane.showMessageDialog(null, "No hay Conexión");
         } else {
-        JOptionPane.showMessageDialog(null, "Conexión establecida con éxito");
+            JOptionPane.showMessageDialog(null, "Conexión establecida con éxito");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       Cargar();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
         Connection con1 = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
+        String order = jTextField1.getText();
+        //int order = Integer.parseInt((String)jTextField1.getText());
 
         try {
                 con1 = Conectar();
-                pst = con1.prepareStatement("select * from users");
+                pst = con1.prepareStatement("select * from orders where orderId='" + order + "'");
                 rs = pst.executeQuery();
                 
-                Object[] users = new Object[3];
-                model = (DefaultTableModel) jTable1.getModel();
+                Object[] orders = new Object[5];
+                model2 = (DefaultTableModel) jTable2.getModel();
                 
                 while (rs.next()) {
-                users[0] = rs.getInt("userId");
-                users[1] = rs.getString("username");
-                users[2] = rs.getString("password");
-                model.addRow(users);              
+                orders[0] = rs.getInt("orderId");
+                orders[1] = rs.getString("bebida");
+                orders[2] = rs.getInt("cantidadB");
+                orders[3] = rs.getString("comida");
+                orders[4] = rs.getInt("cantidadC");
+                model2.addRow(orders);              
                 }
-                jTable1.setModel(model);
+                jTable2.setModel(model2);
                       
             } catch (SQLException e) {
                 System.err.print(e.toString());
                 JOptionPane.showMessageDialog(this, "Ocurrio un error inesperado.\nFavor comunicarse con el administrador.");
             
-            }
-    }//GEN-LAST:event_jButton2ActionPerformed
+            }  
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        limpiar1();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        limpiar2();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,7 +280,13 @@ public class Cocina extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
