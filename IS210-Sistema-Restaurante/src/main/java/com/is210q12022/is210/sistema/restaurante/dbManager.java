@@ -7,16 +7,17 @@ public class dbManager {
 
     private Connection connection;
     private ResultSet results;
+    private Statement request;
 
     private void Connect() {
-        String url = "";
-        String login = "";
-        String password = "";
+        String url = "jdbc:sqlserver://is210-sistema-restaurante.database.windows.net:1433;databaseName=dbo;database=Restaurante;user=MasterChief@is210-sistema-restaurante;password={};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+        String login = "MasterChief";
+        String password = "NetBeans sucks!";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             connection = DriverManager.getConnection(url, login, password);
             System.out.println("Connection Successful...");
-        } catch (Exception ex) {
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | SQLException ex) {
             System.out.println("Connection Failed!");
             System.out.println(ex);
         }
@@ -174,5 +175,32 @@ public class dbManager {
         }
         this.Disconnect();
     }
-
+    
+    public boolean registerProducts(productObjectModel usr){
+        this.Connect();
+        PreparedStatement ps = null;
+        String sql = "INSERT INTO orders (orderId, bebida, precioB, cantidadB, comida, precioC, cantidadC) VALUES (?,?,?,?,?,?,?)";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, usr.getorderId());
+            ps.setString(2, usr.getBebida());
+            ps.setFloat(3, usr.getPriceb());
+            ps.setInt(4, usr.getCantb());
+            ps.setString(5, usr.getComida());
+            ps.setFloat(6, usr.getPricec());
+            ps.setInt(7, usr.getCantc());
+            ps.execute();
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Failed to update entry!");
+            System.out.println(ex);
+            this.Disconnect();
+            return false;
+        }
+    }
+    
+    
+    
+    
+    
 }
