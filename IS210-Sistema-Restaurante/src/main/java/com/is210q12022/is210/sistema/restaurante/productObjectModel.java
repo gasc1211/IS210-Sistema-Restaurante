@@ -1,41 +1,66 @@
 package com.is210q12022.is210.sistema.restaurante;
 
 public class productObjectModel {
-    private int productId;
-    private String productName;
-    private float price;
-    private int inventory;
+    private int orderId;
+    private String bebida;
+    private float precioB;
+    private int cantidadB;
+    private String comida;
+    private float precioC;
+    private int cantidadC;
 
-    public int getProductId() {
-        return productId;
+    public int getorderId() {
+        return orderId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setorderId(int orderId) {
+        this.orderId = orderId;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getBebida() {
+        return bebida;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setBebida(String bebida) {
+        this.bebida = bebida;
     }
 
-    public float getPrice() {
-        return price;
+    public float getPriceb() {
+        return precioB;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setPriceb(float precioB) {
+        this.precioB = precioB;
     }
 
-    public int getInventory() {
-        return inventory;
+    public int getCantb() {
+        return cantidadB;
     }
 
-    public void setInventory(int inventory) {
-        this.inventory = inventory;
+    public void setCantb(int cantB) {
+        this.cantidadB = cantB;
+    }
+    public String getComida() {
+        return comida;
     }
 
+    public void setComida(String comida) {
+        this.comida = comida;
+    }
+
+    public float getPricec() {
+        return precioC;
+    }
+
+    public void setPricec(float precioC) {
+        this.precioC = precioC;
+    }
+
+    public int getCantc() {
+        return cantidadC;
+    }
+
+    public void setCantc(int cantidadC) {
+        this.cantidadC = cantidadC;
+    }
 }
