@@ -18,13 +18,22 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Factura {
     public void pdf() throws BadElementException, IOException{
         try{
+            dbManager db = new dbManager();
+            ArrayList<invoiceObjectModel> datosinvoice = db.LastInvoicesData();
+            Integer id = datosinvoice.get(0).getInvoiceId();
+            Date fechafac = datosinvoice.get(0).getDatetime();
+            float subtotal = datosinvoice.get(0).getSubTotal();
+            float impuestos = datosinvoice.get(0).getTaxes();
+            float totalpagar = datosinvoice.get(0).getTotal();
+            
             FileOutputStream archivo;
-            File file = new File("src/main/java/pdf/factura.pdf");
+            File file = new File("src/main/java/pdf/factura-" + fechafac + "-" + id + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
@@ -39,22 +48,24 @@ public class Factura {
             Font ftitulo = new Font(Font.FontFamily.TIMES_ROMAN, 17, Font.BOLD, BaseColor.BLACK);
             fecha.add(Chunk.NEWLINE);
             Date date = new Date();
-            fecha.add("Factura: 1\nFecha: "+ new SimpleDateFormat("dd/MM/yyyy").format(date)+"\n\n");
+            fecha.add("Factura: #" + fechafac + "-" + id +"\nFecha: "+ new SimpleDateFormat("dd/MM/yyyy").format(date)+"\n\n");
             
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);
             Encabezado.getDefaultCell().setBorder(0);
-            float[] ColumnaEncabezado = new float[]{20f, 30f, 70f, 40f};
+            float[] ColumnaEncabezado = new float[]{25f, 10f, 80f, 50f};
             Encabezado.setWidths(ColumnaEncabezado);
             Encabezado.setHorizontalAlignment(Element.ALIGN_LEFT);
-            Encabezado.addCell(img);
             String cai = "031900815480";
             String tel = "2771-5700";
             String dir = "Carretera salida a Tegucigalpa, contiguo a Ferromax";
+            Encabezado.addCell(img);
             Encabezado.addCell("");
-            Encabezado.addCell("Restaurante IS210-CURC\nCAI: "+ cai +"\nTelefono: "+ tel +"\nDireccion: "+ dir);
+            Encabezado.addCell("\nRestaurante IS210-CURC\nCAI: "+ cai +"\nTelefono: "+ tel +"\nDireccion: "+ dir);
             Encabezado.addCell(fecha);
             doc.add(Encabezado);
+            
+            
             
         // Titulo de "Factura"
             PdfPTable Titulo = new PdfPTable(3);
@@ -94,24 +105,17 @@ public class Factura {
             tablapro.addCell(pro3);
             tablapro.addCell(pro4);
             
-            float subtotal = 0;
-            float impuestos = 0;
-            float totalpagar = 0;
-            for (int i = 0; i < mesero.model.getRowCount(); i++){
-                String cantidad = mesero.model.getValueAt(i, 0).toString();
-                String producto = mesero.model.getValueAt(i, 1).toString();
-                String precio = mesero.model.getValueAt(i, 2).toString();
-                String total = mesero.model.getValueAt(i, 3).toString();
-                float totnum = Float.parseFloat(mesero.model.getValueAt(i, 3).toString());
-                totalpagar = totalpagar + totnum;
+            for (int i = 0; i < EjemploMesero.model.getRowCount(); i++){
+                String cantidad = EjemploMesero.model.getValueAt(i, 0).toString();
+                String producto = EjemploMesero.model.getValueAt(i, 1).toString();
+                String precio = EjemploMesero.model.getValueAt(i, 2).toString();
+                String total = EjemploMesero.model.getValueAt(i, 3).toString();
                 tablapro.addCell(cantidad);
                 tablapro.addCell(producto);
                 tablapro.addCell(precio);
                 tablapro.addCell(total);
             }
-            subtotal = (totalpagar*100)/115;
-            impuestos = (float) (subtotal * 0.15);
-            
+           
             doc.add(tablapro);
             
             Paragraph info = new Paragraph();
@@ -124,14 +128,15 @@ public class Factura {
             
             Paragraph firma = new Paragraph();
             firma.add(Chunk.NEWLINE);
-            firma.add("_____________________\n");
+            firma.add("\n\n_____________________\n");
             firma.add("Sello y Firma\n");
             firma.setAlignment(Element.ALIGN_CENTER);
             doc.add(firma);
             
             Paragraph mensaje = new Paragraph();
             mensaje.add(Chunk.NEWLINE);
-            mensaje.add("¡Gracias por su compra!\nLe esperamos Pronto");
+            mensaje.add("\n\n¡Gracias por su compra!\nEsperamos que regrese Pronto!");
+            mensaje.add("\nLa factura es beneficio de todos\n¡¡¡EXIJALA!!!");
             mensaje.setAlignment(Element.ALIGN_CENTER);
             doc.add(mensaje);
             
