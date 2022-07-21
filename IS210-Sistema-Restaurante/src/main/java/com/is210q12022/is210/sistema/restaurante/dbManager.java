@@ -2,17 +2,20 @@ package com.is210q12022.is210.sistema.restaurante;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class dbManager {
 
     private Connection connection;
+    private Statement request;
     private ResultSet results;
     private Statement request;
 
     private void Connect() {
-        String url = "jdbc:sqlserver://is210-sistema-restaurante.database.windows.net:1433;databaseName=dbo;database=Restaurante;user=MasterChief@is210-sistema-restaurante;password={};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-        String login = "MasterChief";
-        String password = "NetBeans sucks!";
+        String url = "";
+        String login = "";
+        String password = "";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             connection = DriverManager.getConnection(url, login, password);
@@ -27,7 +30,7 @@ public class dbManager {
         try {
             connection.close();
             System.out.println("Disconnection Successful...");
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             System.out.println("Disconnection Failed!");
             System.out.println(ex);
         }
@@ -39,7 +42,7 @@ public class dbManager {
             request = connection.createStatement();
             results = request.executeQuery(query);
             System.out.println("Query executed successfully...");
-        } catch(Exception ex){
+        } catch(SQLException ex){
             System.out.println("Query failed!");
             System.out.println(ex);
         }
@@ -58,7 +61,7 @@ public class dbManager {
                 dbResults.add(user);
             }
             System.out.println("Data fetched successfully...");
-        } catch(Exception ex){
+        } catch(SQLException ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
@@ -79,7 +82,7 @@ public class dbManager {
                 dbResults.add(product);
             }
             System.out.println("Data fetched successfully...");
-        } catch(Exception ex){
+        } catch(SQLException ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
@@ -101,7 +104,7 @@ public class dbManager {
                 dbResults.add(invoice);
             }
             System.out.println("Data fetched successfully...");
-        } catch(Exception ex){
+        } catch(SQLException ex){
             System.out.println("Failed to fetch data!");
             System.out.println(ex);
         }
@@ -198,9 +201,4 @@ public class dbManager {
             return false;
         }
     }
-    
-    
-    
-    
-    
 }
