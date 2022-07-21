@@ -12,9 +12,9 @@ public class dbManager {
     private ResultSet results;
 
     private void Connect() {
-        String url = "jdbc:sqlserver://is210-sistema-restaurante.database.windows.net:1433;database=Restaurante;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-        String login = "MasterChief";
-        String password = "NetBeans sucks!";
+        String url = "";
+        String login = "";
+        String password = "";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             connection = DriverManager.getConnection(url, login, password);
