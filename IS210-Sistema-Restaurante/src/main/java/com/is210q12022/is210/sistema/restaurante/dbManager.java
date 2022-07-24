@@ -10,6 +10,7 @@ public class dbManager {
     private Connection connection;
     private Statement request;
     private ResultSet results;
+    private Statement request;
 
     private void Connect() {
         String url = "";
@@ -178,69 +179,26 @@ public class dbManager {
         this.Disconnect();
     }
     
-    public  ArrayList<invoiceObjectModel> LastInvoicesData(){
-        ArrayList<invoiceObjectModel> dbResults = new ArrayList<>();
-        try {
-            this.executeSQL("SELECT * FROM invoices WHERE invoiceId=(SELECT max(invoiceId) FROM invoices)");
-            while (results.next()) {
-                invoiceObjectModel invoice = new invoiceObjectModel();
-                invoice.setInvoiceId(results.getInt("invoiceId"));
-                invoice.setDatetime(results.getDate("date"));
-                invoice.setSubTotal(results.getFloat("subTotal"));
-                invoice.setTaxes(results.getFloat("taxes"));
-                invoice.setTotal(results.getFloat("total"));
-                dbResults.add(invoice);
-            }
-            System.out.println("Data fetched successfully...");
-        } catch(SQLException ex){
-            System.out.println("Failed to fetch data!");
-            System.out.println(ex);
-        }
-        this.Disconnect();
-        return dbResults;
-    }
-    
-    public boolean registerInvoices(invoiceObjectModel usr){
+    public boolean registerProducts(productObjectModel usr){
         this.Connect();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO invoices (date, subTotal, taxes, total) VALUES (GETDATE(),?,?,?)";
+        String sql = "INSERT INTO orders (orderId, bebida, precioB, cantidadB, comida, precioC, cantidadC) VALUES (?,?,?,?,?,?,?)";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setFloat(1, usr.getSubTotal());
-            ps.setFloat(2, usr.getTaxes());
-            ps.setFloat(3, usr.getTotal());
+            ps.setInt(1, usr.getorderId());
+            ps.setString(2, usr.getBebida());
+            ps.setFloat(3, usr.getPriceb());
+            ps.setInt(4, usr.getCantb());
+            ps.setString(5, usr.getComida());
+            ps.setFloat(6, usr.getPricec());
+            ps.setInt(7, usr.getCantc());
             ps.execute();
-            
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(invoiceObjectModel.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Failed to update entry!");
+            System.out.println(ex);
             this.Disconnect();
             return false;
         }
     }
-    
-    public  ArrayList<productObjectModel> PedidosData(Integer id){
-        ArrayList<productObjectModel> dbResults = new ArrayList<>();
-        try {
-            this.executeSQL("SELECT * FROM orders WHERE orderId='" + id + "'");
-            while (results.next()) {
-                productObjectModel product = new productObjectModel();
-                product.setorderId(results.getInt("orderId"));
-                product.setBebida(results.getString("bebida"));
-                product.setPriceb(results.getFloat("precioB"));
-                product.setCantb(results.getInt("cantidadB"));
-                product.setComida(results.getString("comida"));
-                product.setPricec(results.getFloat("precioC"));
-                product.setCantc(results.getInt("cantidadC"));
-                dbResults.add(product);
-            }
-            System.out.println("Data fetched successfully...");
-        } catch(SQLException ex){
-            System.out.println("Failed to fetch data!");
-            System.out.println(ex);
-        }
-        this.Disconnect();
-        return dbResults;
-    }
-    
 }
