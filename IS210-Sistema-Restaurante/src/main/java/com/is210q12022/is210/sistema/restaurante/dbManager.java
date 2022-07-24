@@ -218,4 +218,29 @@ public class dbManager {
             return false;
         }
     }
+    
+    public  ArrayList<productObjectModel> PedidosData(Integer id){
+        ArrayList<productObjectModel> dbResults = new ArrayList<>();
+        try {
+            this.executeSQL("SELECT * FROM orders WHERE orderId='" + id + "'");
+            while (results.next()) {
+                productObjectModel product = new productObjectModel();
+                product.setorderId(results.getInt("orderId"));
+                product.setBebida(results.getString("bebida"));
+                product.setPriceb(results.getFloat("precioB"));
+                product.setCantb(results.getInt("cantidadB"));
+                product.setComida(results.getString("comida"));
+                product.setPricec(results.getFloat("precioC"));
+                product.setCantc(results.getInt("cantidadC"));
+                dbResults.add(product);
+            }
+            System.out.println("Data fetched successfully...");
+        } catch(SQLException ex){
+            System.out.println("Failed to fetch data!");
+            System.out.println(ex);
+        }
+        this.Disconnect();
+        return dbResults;
+    }
+    
 }
