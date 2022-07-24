@@ -22,33 +22,34 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Factura {
-    public void pdf() throws BadElementException, IOException{
+    
+    public void pdf(Integer idp) throws BadElementException, IOException{
         try{
+            // Inicializa variables
             dbManager db = new dbManager();
-            ArrayList<invoiceObjectModel> datosinvoice = db.LastInvoicesData();
-            Integer id = datosinvoice.get(0).getInvoiceId();
-            Date fechafac = datosinvoice.get(0).getDatetime();
-            float subtotal = datosinvoice.get(0).getSubTotal();
-            float impuestos = datosinvoice.get(0).getTaxes();
-            float totalpagar = datosinvoice.get(0).getTotal();
-            
+            invoiceObjectModel iom = new invoiceObjectModel();
+            ArrayList<productObjectModel> data;
+            data = db.PedidosData(idp);
+            Date date = new Date();
+            String fechaf = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            // Inicia la creacion del PDF
             FileOutputStream archivo;
-            File file = new File("src/main/java/pdf/factura-" + fechafac + "-" + id + ".pdf");
+            File file = new File("src/main/java/pdf/factura-" + fechaf + "-" + idp + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             
             doc.open();
             
-        // Datos del Encabezado
+            // Datos del Encabezado
             Image img = Image.getInstance("src/main/java/images/logopdf.png");
             Paragraph fecha = new Paragraph();
             
             Font fboldtable = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.WHITE);
             Font ftitulo = new Font(Font.FontFamily.TIMES_ROMAN, 17, Font.BOLD, BaseColor.BLACK);
             fecha.add(Chunk.NEWLINE);
-            Date date = new Date();
-            fecha.add("Factura: #" + fechafac + "-" + id +"\nFecha: "+ new SimpleDateFormat("dd/MM/yyyy").format(date)+"\n\n");
+            fecha.add("Factura: #" + fechaf + "-" + idp +"\nFecha: "+ new SimpleDateFormat("dd/MM/yyyy").format(date)+"\n\n");
             
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);
@@ -65,9 +66,7 @@ public class Factura {
             Encabezado.addCell(fecha);
             doc.add(Encabezado);
             
-            
-            
-        // Titulo de "Factura"
+            // Titulo de "Factura"
             PdfPTable Titulo = new PdfPTable(3);
             Titulo.setWidthPercentage(100);
             Titulo.getDefaultCell().setBorder(0);
@@ -81,7 +80,7 @@ public class Factura {
             Titulo.addCell("");
             doc.add(Titulo);
             
-        // Lista Productos
+            // Lista de los productos comprados
             PdfPTable tablapro = new PdfPTable(4);
             tablapro.setWidthPercentage(100);
             tablapro.getDefaultCell().setBorder(0);
@@ -105,24 +104,43 @@ public class Factura {
             tablapro.addCell(pro3);
             tablapro.addCell(pro4);
             
-            for (int i = 0; i < EjemploMesero.model.getRowCount(); i++){
-                String cantidad = EjemploMesero.model.getValueAt(i, 0).toString();
-                String producto = EjemploMesero.model.getValueAt(i, 1).toString();
-                String precio = EjemploMesero.model.getValueAt(i, 2).toString();
-                String total = EjemploMesero.model.getValueAt(i, 3).toString();
-                tablapro.addCell(cantidad);
-                tablapro.addCell(producto);
-                tablapro.addCell(precio);
-                tablapro.addCell(total);
+            Float subtotal;
+            Float impuestos;
+            Float totalpagar = Float.parseFloat("0");
+            
+            for(int i = 0; i < data.size(); i++){
+                
+                Integer cantidadb = data.get(i).getCantb();
+                String productob = data.get(i).getBebida();
+                Float preciob = data.get(i).getPriceb();
+                Integer cantidadc = data.get(i).getCantc();
+                String productoc = data.get(i).getComida();
+                Float precioc = data.get(i).getPricec();
+                Float totalb = cantidadb * preciob;
+                Float totalc = cantidadc * precioc;
+                
+                tablapro.addCell(String.valueOf(cantidadc));
+                tablapro.addCell(String.valueOf(productoc));
+                tablapro.addCell(String.valueOf(precioc));
+                tablapro.addCell(String.valueOf(totalc));
+                
+                tablapro.addCell(String.valueOf(cantidadb));
+                tablapro.addCell(String.valueOf(productob));
+                tablapro.addCell(String.valueOf(preciob));
+                tablapro.addCell(String.valueOf(totalb));
+
+                totalpagar = totalpagar + totalb + totalc;
             }
-           
             doc.add(tablapro);
+            
+            impuestos = (totalpagar/115)*15;
+            subtotal = (totalpagar/115)*85;
             
             Paragraph info = new Paragraph();
             info.add(Chunk.NEWLINE);
-            info.add("Subtotal:" + Math.round(subtotal*100.0)/100.0 + "\n");
-            info.add("Impuestos:" + Math.round(impuestos*100.0)/100.0 + "\n");
-            info.add("Total a Pagar:" + (totalpagar*100.0)/100.0);
+            info.add("Subtotal:  " + Math.round(subtotal*100.0)/100.0 + "\n");
+            info.add("Impuestos:  " + Math.round(impuestos*100.0)/100.0 + "\n");
+            info.add("Total a Pagar:  " + totalpagar);
             info.setAlignment(Element.ALIGN_RIGHT);
             doc.add(info);
             
@@ -143,12 +161,21 @@ public class Factura {
         // Termina la edicion del documento  
             doc.close();
             archivo.close();
+        
+        // Guarda los Datos como ser SubTotal, Impuestos y Total en la Base de Datos
+            iom.setSubTotal((float) (Math.round(subtotal*100.0)/100.0));
+            iom.setTaxes((float) (Math.round(impuestos*100.0)/100.0));
+            iom.setTotal(totalpagar);
+            if(db.registerInvoices(iom)){
+                System.out.println("Se guardo los Datos de la Factura, correctamente");
+            } else{
+                System.out.println("Error al guardar los datos de la factura");
+            }
             
         // Abre el documento al terminar de crearlo
             Desktop.getDesktop().open(file);
-            
         } catch (DocumentException | IOException e) {
             System.out.println("Error: " +e);
-        }
-    } 
+        } 
+    }
 }
