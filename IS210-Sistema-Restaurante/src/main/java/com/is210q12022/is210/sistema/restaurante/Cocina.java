@@ -148,8 +148,8 @@ public class Cocina extends javax.swing.JFrame {
             model2.removeRow(i);
             i = i - 1;
         }
-    }
-
+    }       
+        
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -266,7 +266,9 @@ public class Cocina extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Favor elija un pedido primero");
             jTextField1.setText("");
             this.jTextField1.requestFocus();
-        }else{         
+        
+        }else{
+            int count = 0;
             model2 = (DefaultTableModel) jTable2.getModel();
         
            for (int i = 0; i < jTable1.getRowCount(); i++) {
@@ -278,8 +280,13 @@ public class Cocina extends javax.swing.JFrame {
                                                     jTable1.getValueAt(i, 2),
                                                     jTable1.getValueAt(i, 3),
                                                     jTable1.getValueAt(i, 4)});                      
+            }else{
+                count = count + 1;
             }
         }
+           if(jTable1.getRowCount()==count){
+                JOptionPane.showMessageDialog(null, "No existe el Pedido");
+            }
         }
     }//GEN-LAST:event_BTNElegirPedidoActionPerformed
 
