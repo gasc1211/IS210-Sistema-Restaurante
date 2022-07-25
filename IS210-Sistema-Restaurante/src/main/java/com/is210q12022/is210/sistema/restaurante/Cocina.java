@@ -285,7 +285,7 @@ public class Cocina extends javax.swing.JFrame {
             }
         }
            if(jTable1.getRowCount()==count){
-                JOptionPane.showMessageDialog(null, "No existe el Pedido");
+                JOptionPane.showMessageDialog(null, "No existe el Pedido o Ya Entregado");
             }
         }
     }//GEN-LAST:event_BTNElegirPedidoActionPerformed
