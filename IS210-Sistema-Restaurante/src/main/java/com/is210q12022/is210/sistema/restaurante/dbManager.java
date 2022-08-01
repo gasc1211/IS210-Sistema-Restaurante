@@ -13,9 +13,9 @@ public class dbManager {
     private ResultSet results;
 
     private void Connect() {
-        String url = "jdbc:sqlserver://is210-sistema-restaurante.database.windows.net:1433;database=Restaurante;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-        String login = "MasterChief";
-        String password = "NetBeans sucks!";
+        String url = "";
+        String login = "";
+        String password = "";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             connection = DriverManager.getConnection(url, login, password);
@@ -325,4 +325,29 @@ public class dbManager {
             return false;
         }
     }
+    
+    public  ArrayList<productObjectModel> PedidosData(Integer id){
+        ArrayList<productObjectModel> dbResults = new ArrayList<>();
+        try {
+            this.executeSQL("SELECT * FROM orders WHERE orderId='" + id + "'");
+            while (results.next()) {
+                productObjectModel product = new productObjectModel();
+                product.setorderId(results.getInt("orderId"));
+                product.setBebida(results.getString("bebida"));
+                product.setPriceb(results.getFloat("precioB"));
+                product.setCantb(results.getInt("cantidadB"));
+                product.setComida(results.getString("comida"));
+                product.setPricec(results.getFloat("precioC"));
+                product.setCantc(results.getInt("cantidadC"));
+                dbResults.add(product);
+            }
+            System.out.println("Data fetched successfully...");
+        } catch(SQLException ex){
+            System.out.println("Failed to fetch data!");
+            System.out.println(ex);
+        }
+        this.Disconnect();
+        return dbResults;
+    }
+    
 }
