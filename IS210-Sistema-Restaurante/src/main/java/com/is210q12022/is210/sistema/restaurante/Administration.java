@@ -92,6 +92,14 @@ public class Administration extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administración de Usuarios");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+            public void windowDeactivated(java.awt.event.WindowEvent evt) {
+                formWindowDeactivated(evt);
+            }
+        });
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         tbl_data.setModel(new javax.swing.table.DefaultTableModel(
@@ -238,7 +246,6 @@ public class Administration extends javax.swing.JFrame {
     private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
         // TODO add your handling code here:
         new Login().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btn_logoutActionPerformed
 
     private void btn_newActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newActionPerformed
@@ -262,6 +269,16 @@ public class Administration extends javax.swing.JFrame {
         this.clearForm();
         btn_save.setEnabled(false);
     }//GEN-LAST:event_btn_saveActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_formWindowClosing
+
+    private void formWindowDeactivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowDeactivated
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_formWindowDeactivated
 
     /**
      * @param args the command line arguments

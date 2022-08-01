@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 public class dbManager {
 
@@ -109,6 +110,112 @@ public class dbManager {
         }
         this.Disconnect();
         return dbResults;
+    }
+    
+    public ArrayList<invoiceObjectModel> QueryInvoicesData(java.sql.Date Fecha1, java.sql.Date Fecha2){
+        // By Manry
+        ArrayList<invoiceObjectModel> dbResults = new ArrayList<>(); 
+        try {
+            //this.executeSQL("SELECT * FROM invoices Where Date = " + Fecha); // ExcecuteSQL()
+            this.Connect();
+            PreparedStatement ps = null;
+            String SQL = "SELECT * FROM invoices Where Date >= ? And Date <= ?";
+            //String SQL = "SELECT * FROM invoices Where Date >= '"+Fecha+"'"; //recuest...createstatement
+            //String SQL = "SELECT * FROM invoices WHERE total > 100"; //recuest...createstatement
+            try {
+                ps = connection.prepareStatement(SQL); //SQL
+                ps.setDate(1, Fecha1);   // PrepareStatement
+                ps.setDate(2, Fecha2);   // PrepareStatement
+                //request = connection.createStatement();
+                System.out.println("Ejecución de Consulta: ");
+                results = ps.executeQuery();
+                //results = request.executeQuery(SQL);  // //recuest...createstatement
+                System.out.println("Consulta ejecutada");
+            } catch (SQLException ex) {
+                System.out.println("Error en la consulta:" + ex);
+                Logger.getLogger(invoiceObjectModel.class.getName()).log(Level.SEVERE, null, "Error: " + ex);
+                this.Disconnect();
+            }
+            
+            while (results.next()) {
+                invoiceObjectModel invoice = new invoiceObjectModel();
+                invoice.setInvoiceId(results.getInt("invoiceId"));
+                invoice.setDatetime(results.getDate("date"));
+                invoice.setSubTotal(results.getFloat("subTotal"));
+                invoice.setTaxes(results.getFloat("taxes"));
+                invoice.setTotal(results.getFloat("total"));
+                dbResults.add(invoice);
+                System.out.println("Registro Agregado (Manry)");
+            }
+            System.out.println("Data fetched successfully...");
+        } catch(SQLException ex){
+            System.out.println("Failed to fetch data!");
+            System.out.println(ex);
+        }
+        this.Disconnect();
+        return dbResults;
+    }
+    
+    public DefaultTableModel QueryPedidoData(){
+        DefaultTableModel Modelo = new DefaultTableModel();
+        String[] DataPedidos = new String[7];
+        Modelo.addColumn("Factura N°.");
+        Modelo.addColumn("Bebida");
+        Modelo.addColumn("Precio Bebida");
+        Modelo.addColumn("Cant. Bebida");
+        Modelo.addColumn("Comida");
+        Modelo.addColumn("Precio Comida");
+        Modelo.addColumn("Cant. Comida");
+        
+        try {
+            this.executeSQL("SELECT * FROM Orders");
+            while (results.next()){
+                DataPedidos[0]=results.getString(1);
+                DataPedidos[1]=results.getString(2);
+                DataPedidos[2]=results.getString(3);
+                DataPedidos[3]=results.getString(4);
+                DataPedidos[4]=results.getString(5);
+                DataPedidos[5]=results.getString(6);
+                Modelo.addRow(DataPedidos);
+                System.out.println("Registro agregado!");
+            }
+        }catch(SQLException ex){
+            System.out.println("Failed to fetch data!");
+            System.out.println(ex);
+        }
+        
+        return Modelo;
+    }
+    
+    public DefaultTableModel QueryOrderData(int vOrder){
+        DefaultTableModel Modelo = new DefaultTableModel();
+        String[] DataPedidos = new String[7];
+        Modelo.addColumn("Factura N°.");
+        Modelo.addColumn("Bebida");
+        Modelo.addColumn("Precio Bebida");
+        Modelo.addColumn("Cant. Bebida");
+        Modelo.addColumn("Comida");
+        Modelo.addColumn("Precio Comida");
+        Modelo.addColumn("Cant. Comida");
+        
+        try {
+            this.executeSQL("SELECT * FROM Orders WHERE OrderId = " + vOrder);
+            while (results.next()){
+                DataPedidos[0]=results.getString(1);
+                DataPedidos[1]=results.getString(2);
+                DataPedidos[2]=results.getString(3);
+                DataPedidos[3]=results.getString(4);
+                DataPedidos[4]=results.getString(5);
+                DataPedidos[5]=results.getString(6);
+                Modelo.addRow(DataPedidos);
+                System.out.println("Registro agregado!!");
+            }
+        }catch(SQLException ex){
+            System.out.println("Failed to fetch data! (Orders) By Manry");
+            System.out.println(ex);
+        }
+        
+        return Modelo;
     }
     
     public Boolean authenticate(userObjectModel user) {

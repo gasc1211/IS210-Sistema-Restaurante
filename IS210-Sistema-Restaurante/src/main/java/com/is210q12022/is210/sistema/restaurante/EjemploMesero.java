@@ -8,9 +8,11 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class EjemploMesero extends javax.swing.JFrame {
+    
     public static DefaultTableModel model = new DefaultTableModel();
     private final dbManager db = new dbManager();
     public static invoiceObjectModel currentInvoice = new invoiceObjectModel();
+    
     public EjemploMesero() {
         initComponents();
         jtProductos.setModel(model);
